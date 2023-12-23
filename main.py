@@ -22,8 +22,9 @@ def scrape_accounts(desired_accounts):
             print(f'Please only input valid accounts...')
             print(f'@{account} is not a valid Instagram account')
             return -1
+        else:
+            follower_counts[account] = scrape_account(soup)
     result = sort_accounts(follower_counts)
-    print(result)
     for i, item in enumerate(result):
         print(f'{i}: @{item[0]} - {item[1]} Followers')
 
